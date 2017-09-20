@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <title>Assignment on Closures and Helper Note</title>
+        <!-- HTML5 shim for IE8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+      <script src=“https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js”></script>
+    <![endif]-->
+    <!-- STyle to form, div and input elements -->
+<style type="text/css">
+body{
+background: radial-gradient(circle, #0077ea, #1f4f96, #1b2949, #000000);
+}
+b{
+color: #fff;
+}
+#mainHeader h1{
+    color: #fff;
+    font-family: verdana;
+    font-size: 200%;
+}
+.formBox{
+position:absolute;
+top: 10%;
+left: 25%;
+padding: 20px;
+background-color: #17202a;
+width: 50%;
+}
+input[type=text]{
+background-image: url('icons-Name.png');
+background-position: 8px 6px; 
+background-repeat: no-repeat;
+}
+input[type=email]{
+background-image: url('icons-Email.png');
+background-position: 8px 6px; 
+background-repeat: no-repeat;
+}
+#cityName{
+background-image: url('icons-city.png');
+background-position: 8px 6px; 
+background-repeat: no-repeat;
+}
+input[type=text],input[type=email],input[type=number]{
+width:100%;
+display:inline-block;
+padding: 12px 20px 12px 40px;
+font-family: Lucida Sans;
+font-size: 12px;
+font-weight: bold;
+}
+button{
+background-color: #4CAF50;
+color: white;
+cursor: pointer;
+width: 100%;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+}
+.cancelbtn,.signupbtn{
+float:left;
+width: 50%;
+}
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+input:focus, textarea:focus{
+background-color: cyan;}
+a{
+color:white;
+}
+#helpEmail, #helpName, #helpCity
+{
+display: none;
+font-size: 24px;
+color: white;
+}
+</style>
+</head>
+<body>
+<!-- main section -->
+<main id="mainSection">
+<section id="firstSection">
+<!-- form to display the name,email,age and city -->
+<form action="" method="post" title="Registration Form" class="myForm">
+  <div class="formBox">
+    <label><b>Email</b></label>
+<div id="helpEmail">
+</div>
+    <input type="email" id="email_id" placeholder="Enter Email" name="email" onclick="myFunction(this.id)" required>
+  <label><b>Full Name</b></label>
+<div id="helpName">
+</div>
+<input type="text" id="name_id" name="firstname" value="Eg.John Cena" onclick="myFunction(this.id)" required>
+    <label><b>Age </b></label><input type="number" id="age_id" name="AgeLimit" min="18" max="27" value="18">
+<label><b>City</b></label>
+<div id="helpCity">
+</div>
+<input type="text" id="city_id" name="cityName" id="cityName" onclick="myFunction(this.id)" required>
+    <div class="buttonClass">
+      <button type="reset"  class="cancelbtn" value=reset>Cancel</button>
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </div>
+  </div>
+</form>
+</section>
+</main>
+<script type="text/javascript">
+//function which accepts the id value of the input element selected
+function myFunction(idName){
+var idVal=idName;
+//accessing global variable inside inner fucntion
+function displayDiv(){
+  //validating and performing necessary action based on the ID
+if (idVal=="email_id")
+{
+document.getElementById("helpEmail").innerHTML="Enter your Email Here";
+document.getElementById("helpEmail").style.display="block";
+document.getElementById("helpCity").style.display="none";
+document.getElementById("helpName").style.display="none";
+}
+else if(idVal=="name_id")
+{
+document.getElementById("helpName").innerHTML="Enter your Name Here";
+document.getElementById("helpName").style.display="block";
+document.getElementById("helpEmail").style.display="none";
+document.getElementById("helpCity").style.display="none";
+}
+else if (idVal=="city_id")
+{
+document.getElementById("helpCity").innerHTML="Enter your City Here";
+document.getElementById("helpCity").style.display="block";
+document.getElementById("helpEmail").style.display="none";
+document.getElementById("helpName").style.display="none";
+}
+}
+// calling the function
+displayDiv();
+}
+</script>
+
+</body>
+</html>
